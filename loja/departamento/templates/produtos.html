@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{titulo}}</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            padding: 10px;
+            background-color: #ddd;
+        }
+        
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>{{titulo}}</h1>
+
+    <table border>
+        <tr>
+            <th>Categoria</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Peso</th>
+        </tr>
+        {% for produto in produtos %}
+        <tr>
+            <td>{{produto.categoria}}</td>
+            <td>{{produto.nome}}</td>
+            <td>R$ {{produto.preco}}</td>
+            <td>{{produto.quantidade}}</td>
+            <td>{{produto.peso}}g</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
